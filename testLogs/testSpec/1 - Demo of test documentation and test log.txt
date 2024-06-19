@@ -1,0 +1,39 @@
+Steps to reproduce
+1 - Loading the current site tested: https://example.cypress.io
+2 - Find and click the COMMANDS button in the top menu
+3 - Find and click the ACTIONS option from the dropdown menu
+4 - Find the EMAIL input box and type: fake@email.com 
+5 - Find and click the COMMANDS button in the top menu
+6 - Find and click the ASSERTIONS option from the dropdown menu
+7 - Find and assert that the Link is active, has the attribute href and includes the text cypress.io
+8 - The test FAILED and the system provided the following message:
+{
+  "message": "Timed out retrying after 4000ms: expected 'https://on.cypress.io' to include 'Cypress.io'",
+  "name": "AssertionError",
+  "stack": "AssertionError: Timed out retrying after 4000ms: expected 'https://on.cypress.io' to include 'Cypress.io'\n    at Context.eval (webpack:///./cypress/e2e/spec.cy.js:47:5)",
+  "parsedStack": [
+    {
+      "message": "AssertionError: Timed out retrying after 4000ms: expected 'https://on.cypress.io' to include 'Cypress.io'",
+      "whitespace": ""
+    },
+    {
+      "function": "Context.eval",
+      "fileUrl": "https://example.cypress.io/__cypress/tests?p=cypress/e2e/spec.cy.js",
+      "originalFile": "webpack:///./cypress/e2e/spec.cy.js",
+      "relativeFile": "cypress/e2e/spec.cy.js",
+      "absoluteFile": "/Users/fredrikrawicki/Documents/GitRepos/cypressDemo/cypress/e2e/spec.cy.js",
+      "line": 47,
+      "column": 5,
+      "whitespace": "    "
+    }
+  ],
+  "codeFrame": {
+    "line": 47,
+    "column": 6,
+    "originalFile": "cypress/e2e/spec.cy.js",
+    "relativeFile": "cypress/e2e/spec.cy.js",
+    "absoluteFile": "/Users/fredrikrawicki/Documents/GitRepos/cypressDemo/cypress/e2e/spec.cy.js",
+    "frame": "  45 |     cy.get('.assertions-link').should('have.class', 'active')\n  46 |     .and('have.attr', 'href')\n> 47 |     .and('include', 'Cypress.io')\n     |      ^\n  48 | \n  49 |     cy.step('*********************************** The test has passed **************************')\n  50 |   })",
+    "language": "js"
+  }
+}
